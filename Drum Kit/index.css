@@ -16,6 +16,8 @@ header {
 
 .keys {
     display: flex;
+    flex: 1;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     padding: 90px;
@@ -29,30 +31,30 @@ header {
     margin: 1rem;
     font-size: 1.3rem;
     padding: 1rem .3rem;
-    transition: all 0.07s;
+    transition: all 0.07s ease-in-out;
+    cursor: pointer;
     text-align: center;
-    width: 100px;
+    width: 10rem;
     color: white;
     background-color: rgb(0,0,0,0.4);
-    text-overflow: 0 0 5px black;
+    text-shadow: 0 0 5px black;
 }
 
 .playing {
     // animation: play 1s;
     transform: scale(1.1);
     border-color: #f00;
-    box-shadow: 0 0 10px #f00;
+    box-shadow: 0 0 1rem #f00;
 }
 
 kbd {
     display: block;
     font-size: 2.5rem;
-    // font-size: 40px;
 }
 
 .sound {
     font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: .1rem;
     color: aqua;
 }
