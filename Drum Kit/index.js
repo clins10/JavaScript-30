@@ -7,7 +7,7 @@ function playSound(e) {
   const audio = document.querySelector(`audio[data-key="${e.key}"]`);
   const key = document.querySelector(`.div[data-key="${e.key}"]`);
   if (!audio) return; // stop function from running all together
-  keyy.classList.add('playing');
+  key.classList.add('playing');
   audio.currentTime = 0; //rewind to the start
   audio.play();
 }
