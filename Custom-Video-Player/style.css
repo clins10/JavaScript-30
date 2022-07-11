@@ -86,6 +86,18 @@ body {
   flex: 1;
 }
 
+/*
+  Fullscreen API:
+  https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
+*/
+
+#fullScreen { position: absolute; bottom: 50px; right: 8px; width: 36px; height: 36px; outline: none; border: 1px solid transparent; border-radius: 6px; display: block; cursor: pointer; }
+#fullScreen:hover { border-color: #ffc600 }
+#fullscreen { background: url('https://i.imgur.com/0FTwh6M.png') no-repeat; width: 36px; height: 36px; }
+.off { background-position: 0 0 }
+.on { background-position: -1px -50px }
+
+
 .progress {
   flex: 10;
   position: relative;

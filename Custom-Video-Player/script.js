@@ -14,7 +14,7 @@ function togglePlay() {
 }
 
 function updateButton() {
-  const icon = this.paused ? '►' : '❚ ❚';
+  const icon = this.paused ? '► ' : '❚ ❚';
   console.log(icon);
   toggle.textContent = icon;
 }
@@ -53,3 +53,45 @@ progress.addEventListener('click', scrub);
 progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
+
+// full screen function
+const fullBtn = document.getElementById('fullScreen');
+
+fullBtn.addEventListener('click', function(e) {
+  let tgtEle = document.querySelector('.player');
+  let  onOrOff = fullBtn.classList.contains('on');
+
+  if (onOrOff) {
+    enterFS(tgtEle);
+    fullBtn.classList.remove('on');
+    fullBtn.classList.add('off');
+  } else {
+    exitFS();
+    fullBtn.classList.add('on');
+    fullBtn.classList.remove('off');
+  }
+}, false);
+
+function enterFS(element) {
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if (element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  }
+}
+
+function exitFS() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  }
+}
